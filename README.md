@@ -1,142 +1,145 @@
 # Matheus Boanova Camacho — Portfólio
 
-Portfólio pessoal em Next.js + TypeScript, com direção visual editorial/minimalista.
+Portfólio pessoal desenvolvido para apresentar meus projetos, experiências e evolução como desenvolvedor de software.
 
-## Rodar localmente
+A proposta do projeto foi criar uma experiência simples, direta e visualmente marcante, com foco em tipografia, espaçamento e apresentação dos projetos, evitando o formato tradicional de portfólio baseado em cards e componentes genéricos.
 
-```bash
-npm install
-cp .env.example .env.local
-npm run dev
-```
+## Tecnologias
 
-Abra `http://localhost:3000`.
+* Next.js
+* React
+* TypeScript
+* CSS
+* Vercel
 
-Antes de publicar, valide:
+## Sobre o projeto
 
-```bash
-npm run typecheck
-npm run lint
-npm run build
-```
+O portfólio reúne alguns dos principais projetos que desenvolvi durante meus estudos e minha evolução em desenvolvimento de software.
 
-## O que já existe
+Entre eles:
 
-- Homepage responsiva
-- Projetos selecionados com screenshots reais
-- Sobre / experiência / formação
-- Mais projetos e contato
-- Case studies de SaldoClaro, JobTrack e Bolão da Copa
-- Links reais de GitHub, LinkedIn, e-mail e repositórios
-- SEO base, URL canônica, Open Graph, Twitter Card, sitemap e robots
-- Aviso opcional por e-mail quando uma nova visita acontece
+### SaldoClaro
+
+Aplicação full stack para gestão financeira pessoal, desenvolvida com Java, Spring Boot e PostgreSQL.
+
+O projeto possui autenticação, lançamentos financeiros, categorias, orçamentos, metas, recorrências, dashboard e documentação da API.
+
+[Ver repositório](https://github.com/MatheusCamacho/saldo-claro)
+
+### JobTrack
+
+Aplicação desenvolvida em Vue.js para organizar candidaturas de emprego e acompanhar processos seletivos.
+
+Possui gerenciamento de candidaturas, etapas de processo, métricas e armazenamento local dos dados.
+
+[Ver repositório](https://github.com/MatheusCamacho/jobtrack-vue)
+
+### Bolão da Copa
+
+Aplicação de terminal desenvolvida em Python para gerenciamento de apostas e pontuações de um bolão de futebol.
+
+O projeto trabalha com PostgreSQL, organização em camadas, regras de negócio e testes automatizados.
+
+[Ver repositório](https://github.com/MatheusCamacho/bolao-copa-python)
+
+### Outros projetos
+
+* [Loja de Jogos API](https://github.com/MatheusCamacho/loja-jogos-api)
+* [Biblioteca POO em TypeScript](https://github.com/MatheusCamacho/biblioteca-poo-typescript)
 
 ## Case studies
 
-- `/projetos/saldo-claro`
-- `/projetos/jobtrack`
-- `/projetos/bolao-da-copa`
+Os principais projetos possuem páginas próprias dentro do portfólio, onde apresento com mais detalhes:
 
-## Publicar no GitHub
+* contexto do projeto;
+* funcionalidades;
+* tecnologias utilizadas;
+* decisões técnicas;
+* arquitetura;
+* principais aprendizados.
 
-Crie no GitHub um repositório vazio chamado `matheus-boanova-portfolio` — sem README, `.gitignore` ou licença gerados pelo site — e depois execute na raiz deste projeto:
+Rotas:
+
+```text
+/projetos/saldo-claro
+/projetos/jobtrack
+/projetos/bolao-da-copa
+```
+
+## Estrutura
+
+```text
+src/
+├── app/
+│   ├── api/
+│   ├── projetos/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+├── data/
+└── lib/
+
+public/
+└── projects/
+```
+
+## Executando localmente
+
+Clone o repositório:
 
 ```bash
-git init
-git add .
-git commit -m "feat: adiciona portfolio pessoal"
-git branch -M main
-git remote add origin https://github.com/MatheusCamacho/matheus-boanova-portfolio.git
-git push -u origin main
+git clone https://github.com/MatheusCamacho/matheus-boanova-portfolio.git
 ```
 
-Se a pasta já for um repositório Git, não rode `git init` novamente. Confira primeiro com `git status`.
+Entre na pasta:
 
-## Publicar na Vercel
-
-1. Entre na Vercel usando a conta do GitHub.
-2. Vá em **Add New → Project**.
-3. Importe `MatheusCamacho/matheus-boanova-portfolio`.
-4. A Vercel deve detectar **Next.js** automaticamente.
-5. Mantenha Root Directory em `./` e os comandos de build/install padrão.
-6. Antes do deploy final, adicione as variáveis de ambiente descritas abaixo.
-7. Clique em **Deploy**.
-
-Depois do primeiro deploy, copie a URL de produção e defina:
-
-```env
-NEXT_PUBLIC_SITE_URL=https://SEU-PROJETO.vercel.app
+```bash
+cd matheus-boanova-portfolio
 ```
 
-Salve a variável e faça um novo deploy para que canonical, sitemap e previews usem a URL pública correta.
+Instale as dependências:
 
-Quando tiver um domínio próprio, troque `NEXT_PUBLIC_SITE_URL` pelo domínio definitivo e redeploy.
-
-## Variáveis de ambiente na Vercel
-
-Em **Project → Settings → Environment Variables**, adicione:
-
-```env
-NEXT_PUBLIC_SITE_URL=https://SEU-DOMINIO-OU-VERCEL.app
-VISIT_ALERT_ENABLED=true
-RESEND_API_KEY=re_xxxxxxxxx
-VISIT_ALERT_TO=matheuscamachombc@hotmail.com
-VISIT_ALERT_FROM="Portfolio <visitas@seudominio.com>"
+```bash
+npm install
 ```
 
-Nunca coloque `RESEND_API_KEY` em variável que comece com `NEXT_PUBLIC_`.
+Execute o ambiente de desenvolvimento:
 
-## Aviso de nova visita por e-mail
+```bash
+npm run dev
+```
 
-A implementação fica em:
+A aplicação ficará disponível em:
 
-- `src/components/VisitNotifier.tsx`
-- `src/app/api/visit/route.ts`
-- `.env.example`
+```text
+http://localhost:3000
+```
 
-O comportamento é propositalmente conservador:
+## Funcionalidades
 
-- começa desligado;
-- ignora bots/crawlers comuns;
-- envia no máximo um alerta por navegador a cada 24 horas;
-- não salva IP ou localização;
-- o e-mail contém somente a página visitada e o horário;
-- a chave do provedor de e-mail existe apenas no servidor.
+Além da apresentação dos projetos, o portfólio possui:
 
-### Ativar com Resend
+* layout responsivo;
+* páginas individuais para projetos;
+* navegação entre case studies;
+* metadata para SEO;
+* Open Graph para compartilhamento;
+* sitemap e robots.txt;
+* links para GitHub, LinkedIn e contato;
+* sistema opcional de notificação de novas visitas.
 
-1. Crie uma conta no Resend e gere uma API key.
-2. Para produção, adicione/verifique um domínio remetente no Resend.
-3. Configure as variáveis na Vercel.
-4. Faça um novo deploy.
-5. Abra o site em uma janela anônima e confirme o recebimento do primeiro alerta.
+## Experiência e formação
 
-Durante o desenvolvimento local, mantenha `VISIT_ALERT_ENABLED=false`.
+O portfólio também apresenta parte da minha trajetória em desenvolvimento de software, incluindo minha formação em Análise e Desenvolvimento de Sistemas e minha participação no programa CWI Crescer.
 
-## Domínio próprio
+Projetos desenvolvidos durante o CWI que possuem restrições de compartilhamento não têm código ou materiais internos publicados neste repositório.
 
-Na Vercel, abra **Project → Settings → Domains** e adicione o domínio. A Vercel mostrará os registros DNS necessários. Depois que o domínio estiver ativo:
+## Contato
 
-1. atualize `NEXT_PUBLIC_SITE_URL` para o domínio final;
-2. ajuste `VISIT_ALERT_FROM` para um remetente do mesmo domínio verificado no Resend;
-3. faça um novo deploy.
+**Matheus Boanova Camacho**
 
-## SEO / compartilhamento
+GitHub: [github.com/MatheusCamacho](https://github.com/MatheusCamacho)
 
-O projeto já inclui:
+LinkedIn: [Matheus Boanova Camacho](https://www.linkedin.com/in/matheus-boanova-camacho-34193b357/)
 
-- metadata global em `src/app/layout.tsx`;
-- metadata própria para cada case study;
-- `src/app/opengraph-image.tsx` para o preview social da home;
-- `src/app/sitemap.ts`;
-- `src/app/robots.ts`.
-
-Depois do deploy, teste o link em LinkedIn/WhatsApp/Discord para confirmar o preview.
-
-## Personalização rápida
-
-- Projetos e links: `src/data/projects.ts`
-- Conteúdo dos case studies: `src/data/caseStudies.ts`
-- LinkedIn, GitHub e e-mail: `src/data/links.ts`
-- Configuração geral/URL: `src/lib/site.ts`
-- Screenshots: `public/projects/`
+E-mail: [matheuscamachombc@hotmail.com](mailto:matheuscamachombc@hotmail.com)
