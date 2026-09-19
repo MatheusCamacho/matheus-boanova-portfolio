@@ -6,6 +6,7 @@ export type CaseStudy = {
   year: string;
   role: string;
   repository: string;
+  release?: string;
   image: string;
   imageAlt: string;
   secondaryImage?: string;
@@ -31,6 +32,7 @@ export const caseStudies: CaseStudy[] = [
     year: "2026",
     role: "Projeto pessoal · Desktop / full stack",
     repository: "https://github.com/MatheusCamacho/pokegrid",
+    release: "https://github.com/MatheusCamacho/pokegrid/releases/latest",
     image: "/projects/pokegrid.svg",
     imageAlt: "Capa gráfica do POKÉGRID Field Research System",
     theme: "system",
