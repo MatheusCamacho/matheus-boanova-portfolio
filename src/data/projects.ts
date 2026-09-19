@@ -12,6 +12,18 @@ export type Project = {
 
 export const selectedProjects: Project[] = [
   {
+    name: "POKÉGRID",
+    slug: "pokegrid",
+    description:
+      "Aplicação desktop para explorar dados de Pokémon, montar e salvar times, comparar espécies e analisar fraquezas, cobertura de tipos e golpes.",
+    technologies: ["Electron", "Node.js", "PokéAPI"],
+    year: "2026",
+    variant: "light",
+    image: "/projects/pokegrid.svg",
+    imageAlt: "Capa gráfica do POKÉGRID Field Research System",
+    href: "https://github.com/MatheusCamacho/pokegrid",
+  },
+  {
     name: "SaldoClaro",
     slug: "saldo-claro",
     description:
