@@ -317,6 +317,7 @@
 .finance .kicker { color: #536b2d; }
 .jobs .kicker { color: #52702d; }
 .terminal .kicker { color: #84613c; }
+.system .kicker { color: #6f8500; }
 
 @media (max-width: 1050px) {
   .page { width: min(100% - 64px, 1440px); }
