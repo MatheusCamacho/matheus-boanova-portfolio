@@ -177,8 +177,8 @@
 .projectsGrid {
   margin-top: 76px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 44px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 74px 44px;
 }
 
 .projectCard p {
@@ -494,11 +494,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .projectCard:last-child {
-    grid-column: 1 / -1;
-    width: calc(50% - 22px);
-  }
-
   .aboutSection,
   .contactGrid {
     grid-template-columns: 1fr;
@@ -578,11 +573,6 @@
     margin-top: 56px;
     grid-template-columns: 1fr;
     gap: 90px;
-  }
-
-  .projectCard:last-child {
-    width: 100%;
-    grid-column: auto;
   }
 
   .aboutSection {
