@@ -18,6 +18,14 @@ O portfólio reúne alguns dos principais projetos que desenvolvi durante meus e
 
 Entre eles:
 
+### POKÉGRID
+
+Aplicação desktop para exploração de dados de Pokémon, comparação de espécies, montagem de times e análise de fraquezas, cobertura de tipos e golpes.
+
+O projeto usa Electron, Node.js e PokéAPI, possui favoritos e times salvos, filtros por geração e tipo, Move Lab, builds para Windows/Linux e pipeline de releases.
+
+[Ver repositório](https://github.com/MatheusCamacho/pokegrid) · [Baixar versão desktop](https://github.com/MatheusCamacho/pokegrid/releases/latest)
+
 ### SaldoClaro
 
 Aplicação full stack para gestão financeira pessoal, desenvolvida com Java, Spring Boot e PostgreSQL.
@@ -61,6 +69,7 @@ Os principais projetos possuem páginas próprias dentro do portfólio, onde apr
 Rotas:
 
 ```text
+/projetos/pokegrid
 /projetos/saldo-claro
 /projetos/jobtrack
 /projetos/bolao-da-copa
