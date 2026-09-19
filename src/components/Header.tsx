@@ -11,7 +11,6 @@ export function Header() {
         <a href="/#projetos">Projetos</a>
         <a href="/#sobre">Sobre</a>
         <a href="/#contato">Contato</a>
-        <span className={styles.navDot} aria-hidden="true" />
       </nav>
     </header>
   );

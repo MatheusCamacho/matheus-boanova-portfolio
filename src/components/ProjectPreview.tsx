@@ -21,6 +21,7 @@ export function ProjectPreview({ project }: { project: Project }) {
             src={project.image}
             alt={project.imageAlt ?? `Screenshot do projeto ${project.name}`}
             fill
+            quality={90}
             unoptimized={project.image.endsWith(".svg")}
             sizes="(max-width: 720px) 100vw, 50vw"
           />

@@ -81,6 +81,7 @@ export default async function ProjectPage({ params }: Props) {
             src={project.image}
             alt={project.imageAlt}
             fill
+            quality={90}
             unoptimized={project.image.endsWith(".svg")}
             priority
             sizes="(max-width: 900px) 100vw, 1400px"

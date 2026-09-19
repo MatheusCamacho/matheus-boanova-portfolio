@@ -19,7 +19,7 @@ export const selectedProjects: Project[] = [
     technologies: ["Electron", "Node.js", "PokéAPI"],
     year: "2026",
     variant: "light",
-    image: "/projects/pokegrid.webp",
+    image: "/projects/pokegrid.avif",
     imageAlt: "Capa gráfica do POKÉGRID Field Research System",
     href: "https://github.com/MatheusCamacho/pokegrid",
   },

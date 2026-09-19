@@ -404,3 +404,150 @@
     aspect-ratio: 4 / 3;
   }
 }
+
+
+/* Mobile refinement for case studies. */
+@media (max-width: 720px) {
+  .page {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    padding: 32px 0 72px;
+  }
+
+  .eyebrow {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    font-size: 9px;
+    letter-spacing: 0.09em;
+  }
+
+  .heroGrid {
+    margin-top: 58px;
+    gap: 36px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 18vw, 88px);
+    line-height: 0.84;
+  }
+
+  .summary {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .coverSection {
+    padding-bottom: 78px;
+  }
+
+  .cover {
+    aspect-ratio: 16 / 9;
+  }
+
+  .contentSection {
+    padding: 82px 0;
+  }
+
+  .sectionIndex {
+    margin-bottom: 40px;
+    font-size: 10px;
+  }
+
+  .copyLarge p {
+    font-size: clamp(27px, 8vw, 38px);
+  }
+
+  .copyLarge p + p {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  .stackBlock {
+    padding-top: 36px;
+  }
+
+  .stackBlock > div {
+    margin-bottom: 34px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    min-height: auto;
+    padding: 22px 0;
+  }
+
+  .feature:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .feature p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .decisions {
+    grid-template-columns: 1fr;
+  }
+
+  .decisions article,
+  .decisions article + article {
+    min-height: auto;
+    padding: 30px 0;
+    border-left: 0;
+  }
+
+  .decisions h2 {
+    margin-bottom: 28px;
+    font-size: 26px;
+  }
+
+  .decisions p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .learningGrid {
+    gap: 52px;
+  }
+
+  .learningGrid h2 {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .learningGrid li {
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    font-size: 15px;
+  }
+
+  .secondaryVisual {
+    padding: 70px 0 84px;
+  }
+
+  .secondaryImage {
+    aspect-ratio: 16 / 9;
+  }
+
+  .nextProject {
+    padding: 76px 0 84px;
+  }
+
+  .nextProject a {
+    font-size: clamp(50px, 15vw, 76px);
+  }
+
+  .footer {
+    min-height: auto;
+    padding: 36px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 9.5px;
+  }
+}
