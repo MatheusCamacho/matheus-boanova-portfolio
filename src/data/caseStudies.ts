@@ -11,7 +11,7 @@ export type CaseStudy = {
   secondaryImage?: string;
   secondaryImageAlt?: string;
   secondaryImageCaption?: string;
-  theme: "finance" | "jobs" | "terminal";
+  theme: "finance" | "jobs" | "terminal" | "system";
   technologies: string[];
   overview: string[];
   highlights: string[];
@@ -22,6 +22,64 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "pokegrid",
+    name: "POKÉGRID",
+    kicker: "Pokémon tratado como sistema de dados, não como uma lista de cards.",
+    summary:
+      "Aplicação desktop para explorar espécies, comparar atributos, montar e salvar times e analisar fraquezas, cobertura de tipos e golpes em uma interface de pesquisa.",
+    year: "2026",
+    role: "Projeto pessoal · Desktop / full stack",
+    repository: "https://github.com/MatheusCamacho/pokegrid",
+    image: "/projects/pokegrid.svg",
+    imageAlt: "Capa gráfica do POKÉGRID Field Research System",
+    theme: "system",
+    technologies: [
+      "Electron",
+      "Node.js",
+      "JavaScript",
+      "HTML / CSS",
+      "PokéAPI",
+      "Web Audio API",
+      "electron-builder",
+      "GitHub Actions",
+    ],
+    overview: [
+      "O POKÉGRID começou como uma interface para consultar Pokémon e evoluiu para uma aplicação desktop completa. A proposta foi evitar a aparência de uma Pokédex tradicional e organizar os dados como um sistema de pesquisa, com índice, fichas de espécie, comparações e análise de time.",
+      "O mesmo código funciona no navegador e dentro do Electron. No desktop, a aplicação inicia um serviço Node local, normaliza os dados da PokéAPI, mantém cache em memória e disco e entrega a interface sem exigir que o usuário tenha Node.js ou qualquer ambiente de desenvolvimento instalado.",
+    ],
+    highlights: [
+      "Busca por nome, número e formas como Mega e Gigantamax",
+      "Filtros por tipo e geração",
+      "Favoritos e times salvos localmente",
+      "Team Lab com matriz de fraquezas, resistências e imunidades",
+      "Move Lab com cobertura ofensiva, STAB e classe de dano",
+      "Comparação lado a lado de Pokémon",
+      "Interface em inglês e português do Brasil",
+      "Builds para Windows e Linux com releases automatizadas",
+    ],
+    decisions: [
+      {
+        title: "Dados atrás de uma camada própria",
+        text: "A interface não consome a PokéAPI diretamente. O backend local resolve espécies, formas, gerações e golpes e devolve um formato normalizado, o que reduz acoplamento e facilita cache, tratamento de erro e testes.",
+      },
+      {
+        title: "Desktop sem abrir o renderer",
+        text: "O Electron mantém nodeIntegration desativado, contextIsolation e sandbox ativos. O renderer recebe apenas uma ponte mínima para informações do sistema e atualização, enquanto toda a lógica principal continua passando pela API local.",
+      },
+      {
+        title: "Análise que mostra os dados",
+        text: "O Team Lab não esconde tudo atrás de uma nota. A matriz dos 18 tipos continua visível, e o Move Lab calcula cobertura a partir dos golpes escolhidos para que o usuário consiga entender de onde cada resultado veio.",
+      },
+    ],
+    learnings: [
+      "Empacotar e distribuir uma aplicação desktop com pipeline de release.",
+      "Normalizar dados de uma API externa e trabalhar com cache e fallback.",
+      "Tratar interface, lógica de domínio, persistência local e distribuição como partes do mesmo produto.",
+    ],
+    nextSlug: "saldo-claro",
+    nextName: "SaldoClaro",
+  },
   {
     slug: "saldo-claro",
     name: "SaldoClaro",
@@ -193,8 +251,8 @@ export const caseStudies: CaseStudy[] = [
       "Modelar regras financeiras com precisão e arredondamento previsível.",
       "Diferenciar regra de negócio, persistência e apresentação para facilitar manutenção e testes.",
     ],
-    nextSlug: "saldo-claro",
-    nextName: "SaldoClaro",
+    nextSlug: "pokegrid",
+    nextName: "POKÉGRID",
   },
 ];
 
