@@ -33,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Projeto pessoal · Desktop / full stack",
     repository: "https://github.com/MatheusCamacho/pokegrid",
     release: "https://github.com/MatheusCamacho/pokegrid/releases/latest",
-    image: "/projects/pokegrid.avif",
+    image: "/projects/pokegrid.webp",
     imageAlt: "Capa gráfica do POKÉGRID Field Research System",
     theme: "system",
     technologies: [
