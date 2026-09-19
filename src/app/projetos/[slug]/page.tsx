@@ -81,6 +81,7 @@ export default async function ProjectPage({ params }: Props) {
             src={project.image}
             alt={project.imageAlt}
             fill
+            unoptimized={project.image.endsWith(".svg")}
             priority
             sizes="(max-width: 900px) 100vw, 1400px"
           />
@@ -99,6 +100,9 @@ export default async function ProjectPage({ params }: Props) {
               {project.technologies.map((tech) => <span key={tech}>{tech}</span>)}
             </div>
             <a href={project.repository} target="_blank" rel="noopener noreferrer">Ver código no GitHub ↗</a>
+            {project.release ? (
+              <a href={project.release} target="_blank" rel="noopener noreferrer">Baixar versão desktop ↗</a>
+            ) : null}
           </div>
         </div>
       </section>
